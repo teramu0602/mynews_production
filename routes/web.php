@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/A', function () {
+    return view('A');
+});
+
 use App\Http\Controllers\Admin\NewsController;
 Route::controller(NewsController::class)->prefix('admin')->name('admin.')->middleware('auth')->group(function() {
     Route::get('news/create','add')->name('news.add');
